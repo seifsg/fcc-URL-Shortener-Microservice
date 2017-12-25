@@ -32,6 +32,9 @@ async function isValid(body) {
 	if (body.url.trim() === '') {
 		return false;
 	}
+	if (body.url.trim().match(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/g) == null) {
+		return false;
+	}
 	// dns lookup test
 	// promise returns error object
 	// if error object is null
@@ -56,7 +59,7 @@ function addUrlToDb(url) {
 			fetchUrl(url).then(existing => {
 				if (!existing) {
 					console.log('adding new url');
-					newShortend = new urlModel({
+					const newShortend = new urlModel({
 						url: url,
 						_id: 0
 					});
