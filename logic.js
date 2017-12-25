@@ -109,7 +109,7 @@ function isValidId(params) {
 	if (params.id == undefined) {
 		return false;
 	}
-	if (params.id.match(/^[0-9]$/g) == null) {
+	if (params.id.match(/^[0-9]+$/g) == null) {
 		return false;
 	}
 	return true;
