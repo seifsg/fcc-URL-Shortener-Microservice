@@ -1,0 +1,20 @@
+{
+	"name": "fcc-learn-npm-package-json",
+	"dependencies": {
+		"express": "^4",
+		"mongodb": "^3.0.0",
+		"mongodb-autoincrement": "^1.0.1",
+		"mongoose": "^4.13.7"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "nodemon server.js"
+	},
+	"engines": {
+		"node": "9"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://idontknow/todo.git"
+	}
+}
